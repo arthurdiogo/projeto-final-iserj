@@ -4,7 +4,7 @@ Este projeto foi realizado durante o ensino médio no ISERJ como Projeto de conc
 
 ## Tecnologias utilizadas:  
 -HTML  
--CSS
--PHP
--MYSQL
--BOOTSTRAP
+-CSS  
+-PHP  
+-MYSQL  
+-BOOTSTRAP  
