@@ -4,13 +4,13 @@ session_start();
 
 include('conexaolog.php');
 
-$nome= $_POST['nome'];
-$endereco= $_POST['endereco'];
-$complemento= $_POST['complemento'];
-$telefone= $_POST['telefone'];
-$cpf= $_POST['cpf'];
-$email= $_POST['email'];
-$senha= $_POST['senha'];
+$nome=mysqli_real_escape_string($conexao, $_POST['nome']);
+$endereco= mysqli_real_escape_string($conexao, $_POST['endereco']);
+$complemento= mysqli_real_escape_string($conexao, $_POST['complemento']);
+$telefone= mysqli_real_escape_string($conexao, $_POST['telefone']);
+$cpf= mysqli_real_escape_string($conexao, $_POST['cpf']);
+$email= mysqli_real_escape_string($conexao, $_POST['email']);
+$senha= mysqli_real_escape_string($conexao, $_POST['senha']);
 
 $query="SELECT email FROM usuarios WHERE email = '{$email}'";
 $result = mysqli_query($conexao, $query);
