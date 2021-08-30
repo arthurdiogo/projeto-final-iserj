@@ -1,7 +1,7 @@
 <?php
 $message = "";
 if (isset($_GET['op']) and $_GET['op'] == 1) {
-    $message = 'O email informado já está cadastrado. Por favor informe um outro ou faça o login!';
+    $message = '<h6>O email informado já está cadastrado. Por favor informe um outro ou faça o login!</h6>';
 }
 ?>
 
@@ -28,45 +28,45 @@ if (isset($_GET['op']) and $_GET['op'] == 1) {
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="nome">Seu nome:</label>
-                        <input type="text" class="form-control" name="nome" placeholder="ex. Arthur Diogo" maxlength="80">
+                        <input type="text" class="form-control" name="nome" placeholder="ex. Arthur Diogo" maxlength="80" required>
                     </div>                
                 </div>
         
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="endereco">Seu endereço e número:</label>
-                        <input type="text" class="form-control" name="endereco" placeholder="ex. Rua Marize Barros 43" maxlength="120">
+                        <input type="text" class="form-control" name="endereco" placeholder="ex. Rua Marize Barros 43" maxlength="120" required>
                     </div>                
                 </div>
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="complemento">Complemento:</label>
-                        <input type="text" class="form-control" name="complemento" placeholder="ex. 99">
+                        <input type="text" class="form-control" name="complemento" placeholder="ex. 99" required>
                     </div>                
                 </div>       
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="numero">Número de telefone:</label>
-                        <input type="text" class="form-control" name="telefone" placeholder="ex. (21)91232-4242" maxlength="15">
+                        <input type="text" class="form-control" name="telefone" placeholder="ex. (21)91232-4242" maxlength="15" required>
                     </div>                
                 </div>      
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="cpf">CPF:</label>
-                        <input type="text" class="form-control" name="cpf" placeholder="143.535.864-87" maxlength="14">
+                        <input type="text" class="form-control" name="cpf" placeholder="143.535.864-87" maxlength="14" required>
                     </div>                
                 </div>       
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="email">E-mail:</label>
                         <?php echo "<br>".$message;?>
-                        <input type="email" class="form-control" name="email" placeholder="ex. meuemail@gmail.com">
+                        <input type="email" class="form-control" name="email" placeholder="ex. meuemail@gmail.com" required>
                     </div>                
                 </div>       
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="senha">Senha:</label>
-                        <input type="password" class="form-control" name="senha">
+                        <input type="password" class="form-control" name="senha" required>
                     </div>                
                 </div>       
                 <button type="submit" class="btn btn-primary mt-2">Cadastrar</button>

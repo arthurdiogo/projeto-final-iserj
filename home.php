@@ -22,7 +22,7 @@ if (empty($_SESSION['nome'])) {
     <link rel="stylesheet" href="style/owl/owl.carousel.min.css">
     <link rel="stylesheet" href="style/owl/owl.theme.default.min.css">
 
-    <title>CARDÁPIO PF LANCHES</title>
+    <title>Cardápio PF Lanches</title>
 </head>
 <body>
     <header>
@@ -89,11 +89,11 @@ if (empty($_SESSION['nome'])) {
                 <img class="box-cardapio" src="img/acompanhamentos/fritas.jpeg" alt="" srcset=""></a> 
             </div>
             <div class="item">
-                <h3 align="center">BATATA COM CHEDDAR P/ 1</h3>
+                <h3 align="center">BATATA PREMIUM P/ 1</h3>
                 <img class="box-cardapio" src="img/acompanhamentos/batatacheddarp1.jpg" alt="" srcset=""></a>
             </div>
             <div class="item">
-                <h3 align="center">BATATA COM CHEDDAR P/ 2</h3>
+                <h3 align="center">BATATA PREMIUM P/ 2</h3>
                 <img class="box-cardapio" src="img/acompanhamentos/batatacheddarp2.jpeg" alt="" srcset=""></a>
             </div>
             <div class="item">
@@ -101,7 +101,7 @@ if (empty($_SESSION['nome'])) {
                 <img class="box-cardapio" src="img/acompanhamentos/batatacanoa.jpg" alt="" srcset=""></a>
             </div>
             <div class="item">
-                <h3 align="center">BATATA CANOA C/ CHEDDAR</h3>
+                <h3 align="center">BATATA CANOA PREMIUM</h3>
                 <img class="box-cardapio" src="img/acompanhamentos/batatacanoacheddar.jpg" alt="" srcset=""></a>
             </div>
             <div class="item">
@@ -151,6 +151,16 @@ if (empty($_SESSION['nome'])) {
         </div>
     </div>
     <footer class="partebaixo">
+        <div class="botoes">
+            <button role="button" class="botao">
+                <i class="fab fa-whatsapp"></i><!-- link do icon -->
+                <a class="botaovivo" href="https://wa.me/5521993442846" target="_blank">FAZER PEDIDO</a> 
+            </button>
+            <button role="button" class="botao">
+                <i class="fas fa-info-circle"></i> <!-- link do icon -->
+                <a class="botaovivo" href="contato.html" target="_blank">RECLAMAÇÃO OU SUGESTÃO</a>
+            </button>
+        </div>
     </footer>
 
 
