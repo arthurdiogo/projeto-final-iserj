@@ -3,12 +3,15 @@ $message = "";
 if (isset($_GET['op']) and $_GET['op'] == 1) {
     $message = '<h4>Email ou senha incorretos! Tente novamente!</h4>';
 }
+if (isset($_GET['op']) and $_GET['op'] == 4) {
+  $message = '<h4>Sua nova senha foi enviada para o seu email!</h4>';
+}
 ?>
 
 <!DOCTYPE html>
 <head>
   <meta charset="UTF-8" />
-  <title>Formulário de Login e Registro com HTML5 e CSS3</title>
+  <title>Login</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <link rel="stylesheet" type="text/css" href="login.css" />
 </head>
@@ -34,8 +37,7 @@ if (isset($_GET['op']) and $_GET['op'] == 1) {
           </p>
            
           <p> 
-            <input type="checkbox" name="manterlogado" id="manterlogado" value="" /> 
-            <label for="manterlogado">Lembrar senha</label>
+            <a href="esquecisenha.php">Esqueceu sua senha?</a>
           </p>
            
           <p> 

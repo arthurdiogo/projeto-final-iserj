@@ -26,5 +26,5 @@ if ($row > 0) {
     $_SESSION['nome'] = $data[1];
     header('Location: home.php');
 }else{
-    header('Location: index.php?op=1'); 
+    header('Location: index.php?op=1');
 }
