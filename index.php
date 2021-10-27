@@ -20,34 +20,37 @@ if (isset($_GET['op']) and $_GET['op'] == 4) {
     <a class="links" id="paracadastro"></a>
     <a class="links" id="paralogin"></a>
      
-    <div class="content">      
+    <div class="content">    
       <!--FORMULÁRIO DE LOGIN-->
       <div id="login">
-      <?php echo "<br>".$message;?> 
-        <form method="post" action="login.php"> 
-          <h1>Login</h1> 
-          <p> 
-            <label for="email">Seu email</label>
-            <input id="email" name="email" type="text" placeholder="ex. meuemail@gmail.com" required/>
-          </p>
-           
-          <p> 
-            <label for="senha">Sua senha</label>
-            <input id="senha" name="senha" type="password" required/> 
-          </p>
-           
-          <p> 
-            <a href="esquecisenha.php">Esqueceu sua senha?</a>
-          </p>
-           
-          <p> 
-            <input type="submit" value="Logar" /> 
-          </p>
-           
-          <p class="link">
-            Ainda não tem conta?
-            <a href="cadastro.php">Cadastre-se</a>
-          </p>
+        <div class="imageCenter">
+          <img class="logo" src="img/logoprojetolanches.png" alt="">
+        </div>           
+          <form method="post" action="login.php"> 
+            <h1>Login</h1>
+            <?php echo "<br>".$message;?>
+            <p> 
+              <label for="email">Seu email</label>
+              <input id="email" name="email" type="text" placeholder="ex. meuemail@gmail.com" required/>
+            </p>
+            
+            <p> 
+              <label for="senha">Sua senha</label>
+              <input id="senha" name="senha" type="password" required/> 
+            </p>
+            
+            <p> 
+              <a href="esquecisenha.php">Esqueceu sua senha?</a>
+            </p>
+            
+            <p> 
+              <input type="submit" value="Logar" /> 
+            </p>
+            
+            <p class="link">
+              Ainda não tem conta?
+              <a href="cadastro.php">Cadastre-se</a>
+            </p>
         </form>
       </div>
     </div>
