@@ -33,17 +33,17 @@ include('conexaolog.php');
             <h2 class="logo">CARDÁPIO</h2>
             <nav>
                 <a href="#">Olá, <?php echo $_SESSION['nome'] ?></a>
+                <i class="fas fa-shopping-cart">(<?php echo $_SESSION['quantidade'] ?>)</i>
                 <a href="logout.php">Sair</a>
             </nav>
         </div>
     </header>
     <div class="carrosel-lanches">
-      
         <div class="owl-carousel owl-theme">
 
             <?php
             
-            $query="SELECT id, nome, imagem FROM produtos WHERE categoria =1 AND quantidade > 0 ";
+            $query="SELECT id, nome, imagem FROM produtos WHERE categorias = 1 AND quantidade > 0 ";
 
             $result = mysqli_query($conexao, $query);
             $data = mysqli_fetch_all($result);
@@ -51,9 +51,10 @@ include('conexaolog.php');
             foreach ($data as $item) { ?>
                 <div class="item">
                     <h3 align="center"><?php echo $item[1]; ?></h3>
-                    <img class="box-cardapio" src="<?php echo $item[2];  ?>" alt="" srcset=""></a> 
-                </div>
-            <?php                    
+                    <img class="box-cardapio" src="<?php echo $item[2];  ?>" alt="" srcset="">
+                    <a href="detalhes.php?id=<?php echo $item[0] ?>">Comprar</a>
+                </div>      
+            <?php
             }
             ?>
         </div>
@@ -63,7 +64,7 @@ include('conexaolog.php');
         <div class="owl-carousel owl-theme">
         <?php
             
-            $query="SELECT id, nome, imagem FROM produtos WHERE categoria =2 AND quantidade > 0 ";
+            $query="SELECT id, nome, imagem FROM produtos WHERE categorias =2 AND quantidade > 0 ";
 
             $result = mysqli_query($conexao, $query);
             $data = mysqli_fetch_all($result);
@@ -71,7 +72,8 @@ include('conexaolog.php');
             foreach ($data as $item) { ?>
                 <div class="item">
                     <h3 align="center"><?php echo $item[1]; ?></h3>
-                    <img class="box-cardapio" src="<?php echo $item[2];  ?>" alt="" srcset=""></a> 
+                    <img class="box-cardapio" src="<?php echo $item[2];  ?>" alt="" srcset=""></a>
+                    <a class="btn btn-primary" href="detalhes.php?id=<?php echo $item[0] ?>">Comprar</a>
                 </div>
             <?php                    
             }
@@ -83,7 +85,7 @@ include('conexaolog.php');
         <div class="owl-carousel owl-theme">
         <?php
             
-            $query="SELECT id, nome, imagem FROM produtos WHERE categoria =3 AND quantidade > 0 ";
+            $query="SELECT id, nome, imagem FROM produtos WHERE categorias =3 AND quantidade > 0 ";
 
             $result = mysqli_query($conexao, $query);
             $data = mysqli_fetch_all($result);
@@ -91,7 +93,8 @@ include('conexaolog.php');
             foreach ($data as $item) { ?>
                 <div class="item">
                     <h3 align="center"><?php echo $item[1]; ?></h3>
-                    <img class="box-cardapio" src="<?php echo $item[2];  ?>" alt="" srcset=""></a> 
+                    <img class="box-cardapio" src="<?php echo $item[2];  ?>" alt="" srcset=""></a>
+                    <a href="detalhes.php?id=<?php echo $item[0] ?>">Comprar</a> 
                 </div>
             <?php                    
             }

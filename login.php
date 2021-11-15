@@ -15,7 +15,7 @@ if (empty($email) || empty($senha)) {
 $email = mysqli_real_escape_string($conexao, $email);
 $senha = mysqli_real_escape_string($conexao, $senha);
 
-$query="SELECT id, nome FROM usuarios WHERE email = '{$email}' and senha = md5('{$senha}');";
+$query="SELECT id, nome FROM clientes WHERE email = '{$email}' and senha = md5('{$senha}');";
 
 $result = mysqli_query($conexao, $query);
 
@@ -24,6 +24,7 @@ $data = mysqli_fetch_row($result);
 
 if ($row > 0) {
     $_SESSION['nome'] = $data[1];
+    $_SESSION['cliente_id'] = $data[0];
     header('Location: home.php');
 }else{
     header('Location: index.php?op=1');

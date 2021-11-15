@@ -23,9 +23,7 @@ if (isset($_GET['op']) and $_GET['op'] == 4) {
     <div class="content">    
       <!--FORMULÁRIO DE LOGIN-->
       <div id="login">
-        <div class="imageCenter">
-          <img class="logo" src="img/logoprojetolanches.png" alt="">
-        </div>           
+          <img class="logo" src="img/logoprojetolanches.png" alt="">          
           <form method="post" action="login.php"> 
             <h1>Login</h1>
             <?php echo "<br>".$message;?>
