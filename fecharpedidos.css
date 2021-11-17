@@ -18,7 +18,7 @@ body{
 }
 
 header{
-    background-color: black;
+    background-color: whi;
     padding-bottom: 10px;
 }
 
@@ -38,56 +38,18 @@ header .logo{
 
 header nav a{
     text-decoration: none;
-    color: #AAA;
+    color: black;
     margin-right: 10px;
 }
 
 header nav a:hover{ /* mudar a cor quando o cursor passar em cima */
-    color: #fff;
+    color: green;
 }
 
-.box-cardapio{
-    height: 85%;
-    width: 80%;
-    display: block;
+.tey{
+    text-align: center;
 }
 
-.carrosel-lanches{
-    margin-top: 5px;
-}
-
-.item{
-    height: 280px;
-}
-
-.partebaixo{
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-.botao{
-    background-color: #363636;
-    font-weight: bold;
-    border: none;
-    color: white;
-    padding: 15px 25px;
-    margin-right: 15px;
-    font-size: 15px;
-    cursor: pointer; /* muda o cursor */
-    transition: .3s ease all; /* transição entre uma animação e outra */
-    border-radius: 2%;
-}
-
-.botao:hover{ /* mudar a cor quando o cursor passar em cima */
-    background-color: black;
-}
-
-.botao i{
-    margin-right: 8px;
-    font-weight: bold;
-}
-
-.botaovivo{
-    color: white;
-    text-decoration: none;
+a{
+    color: inherit;
 }

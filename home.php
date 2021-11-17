@@ -6,6 +6,7 @@ if (empty($_SESSION['nome'])) {
     header('Location: index.php');
 }
 
+
 include('conexaolog.php');
 
 ?>
@@ -17,6 +18,7 @@ include('conexaolog.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
+
 
     <!-- responsividade -->
     <link rel="stylesheet" href="style/responsive.css">
@@ -33,11 +35,14 @@ include('conexaolog.php');
             <h2 class="logo">CARDÁPIO</h2>
             <nav>
                 <a href="#">Olá, <?php echo $_SESSION['nome'] ?></a>
-                <i class="fas fa-shopping-cart">(<?php echo $_SESSION['quantidade'] ?>)</i>
                 <a href="logout.php">Sair</a>
+                <a href="fecharpedidos.php">
+                <i class="fas fa-shopping-cart">(<?php if (empty($_SESSION['quantidade'])){ echo 0; }else echo $_SESSION['quantidade']; ?>)</i>
+                </a>
             </nav>
         </div>
     </header>
+    
     <div class="carrosel-lanches">
         <div class="owl-carousel owl-theme">
 
@@ -52,7 +57,8 @@ include('conexaolog.php');
                 <div class="item">
                     <h3 align="center"><?php echo $item[1]; ?></h3>
                     <img class="box-cardapio" src="<?php echo $item[2];  ?>" alt="" srcset="">
-                    <a href="detalhes.php?id=<?php echo $item[0] ?>">Comprar</a>
+                    
+                    <a class="botaovivo" href="detalhes.php?id=<?php echo $item[0] ?>">Comprar</a>
                 </div>      
             <?php
             }
@@ -73,7 +79,7 @@ include('conexaolog.php');
                 <div class="item">
                     <h3 align="center"><?php echo $item[1]; ?></h3>
                     <img class="box-cardapio" src="<?php echo $item[2];  ?>" alt="" srcset=""></a>
-                    <a class="btn btn-primary" href="detalhes.php?id=<?php echo $item[0] ?>">Comprar</a>
+                    <a class="botaovivo" href="detalhes.php?id=<?php echo $item[0] ?>">Comprar</a>
                 </div>
             <?php                    
             }
@@ -94,7 +100,7 @@ include('conexaolog.php');
                 <div class="item">
                     <h3 align="center"><?php echo $item[1]; ?></h3>
                     <img class="box-cardapio" src="<?php echo $item[2];  ?>" alt="" srcset=""></a>
-                    <a href="detalhes.php?id=<?php echo $item[0] ?>">Comprar</a> 
+                    <a class="botaovivo" href="detalhes.php?id=<?php echo $item[0] ?>">Comprar</a> 
                 </div>
             <?php                    
             }

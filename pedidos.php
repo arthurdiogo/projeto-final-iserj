@@ -2,6 +2,10 @@
 
 session_start();
 
+if (empty($_SESSION['nome'])) {
+    header('Location: index.php');
+}
+
 include('conexaolog.php');
 
 $quantidade = $_POST['quantidade'];
@@ -22,7 +26,6 @@ $today = date("Y-m-d");
 
 if (empty($_SESSION['pedido_id'])) {
     $query= "INSERT INTO pedidos (cliente_id, status, data) VALUES ($_SESSION[cliente_id], 'aberto', '{$today}');";
-    echo $query;
     
     $result = mysqli_query($conexao, $query);
     $data = mysqli_fetch_row($result);  

@@ -21,10 +21,6 @@ include('conexaolog.php');
     <!-- responsividade -->
     <link rel="stylesheet" href="style/responsive.css">
 
-    <!-- OWL CSS  -->
-    <link rel="stylesheet" href="style/owl/owl.carousel.min.css">
-    <link rel="stylesheet" href="style/owl/owl.theme.default.min.css">
-
     <title>Cardápio PF Lanches</title>
 </head>
 <body>
@@ -32,9 +28,11 @@ include('conexaolog.php');
         <div class="container">
             <h2 class="logo">DETALHES</h2>
             <nav>
-                <a href="#">Olá, <?php echo $_SESSION['nome'] ?></a>
+                <a href="home.php">Olá, <?php echo $_SESSION['nome'] ?></a>
                 <a href="logout.php">Sair</a>
-                <i class="fas fa-shopping-cart">(<?php echo $_SESSION['quantidade'] ?>)</i>
+                <a href="fecharpedidos.php">
+                <i class="fas fa-shopping-cart">(<?php if (empty($_SESSION['quantidade'])){ echo 0; }else echo $_SESSION['quantidade']; ?>)</i>
+                </a>
             </nav>
         </div>
     </header>
@@ -61,14 +59,14 @@ include('conexaolog.php');
                         <input name="quantidade" type="number">
                         <input name="produto_id" type="hidden" value="<?php echo $_GET['id'];?>">
                         <input name="valor" type="hidden" value="<?php echo $data[3];?>">
-                        <input type="submit" value="Adicionar ao Carrinho">
+                        <input class="botaoAdicionar" type="submit" value="Adicionar ao Carrinho">
                     </form>
                 </td>
             </tr>
         </table>
     </div>
 
-
-
-
     <script src="https://kit.fontawesome.com/b6a87fb752.js" crossorigin="anonymous"></script> <!-- link para os icons -->    
+
+</body>
+</html>
