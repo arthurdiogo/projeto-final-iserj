@@ -15,7 +15,7 @@ $cpf= mysqli_real_escape_string($conexao, $_POST['cpf']);
 $email= mysqli_real_escape_string($conexao, $_POST['email']);
 $senha= mysqli_real_escape_string($conexao, $_POST['senha']);
 
-$query="SELECT email FROM clientes WHERE email = '{$email}'";
+$query="SELECT email FROM usuarios WHERE email = '{$email}'";
 $result = mysqli_query($conexao, $query);
 $row = mysqli_num_rows($result);
 if ($row == 1) {
@@ -23,8 +23,8 @@ if ($row == 1) {
     echo $row;exit();
 }
 
-$query = "INSERT INTO clientes (nome, cep, cidade, bairro, endereco_numero, complemento, telefone, cpf, email, senha) 
-            VALUES ('{$nome}', '{$cep}', '{$cidade}', '{$bairro}', '{$enderecoNumero}', '{$complemento}', '{$telefone}', '{$cpf}', '{$email}', md5('{$senha}'));";
+$query = "INSERT INTO usuarios (nome, cep, cidade, bairro, endereco_numero, complemento, telefone, cpf, email, senha, tipo) 
+            VALUES ('{$nome}', '{$cep}', '{$cidade}', '{$bairro}', '{$enderecoNumero}', '{$complemento}', '{$telefone}', '{$cpf}', '{$email}', md5('{$senha}'), 'cliente');";
 
 
 $result = mysqli_query($conexao, $query);

@@ -45,7 +45,8 @@ include('conexaolog.php');
     </header>
 
     <h2 class="tey">Itens selecionados</h2>
-
+    
+    <div class="container">
         <div class="col-md-6">
             <?php
                 $query="SELECT p.nome, i.valor, i.quantidade, i.id FROM itens i
@@ -92,7 +93,11 @@ include('conexaolog.php');
                         <td><?php echo 'R$'. number_format($soma,2,',','.'); ?></td>
                         <td><button class="btn btn-danger btn-block"><a href="excluiritem.php?op=1" style="text-decoration:none; color:inherit">Remover tudo</a></button></td>
                     </tr>
-
+                <table>
+                <button class="btn btn-success btn-block"><a href="finalizarpedido.php?op=1" style="text-decoration:none; color:inherit">Finalizar pedido</a></button>
+                </table>
         </div>
-
+    </div>
     <script src="https://kit.fontawesome.com/b6a87fb752.js" crossorigin="anonymous"></script> <!-- link para os icons -->    
+</body>
+</html>

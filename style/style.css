@@ -43,7 +43,7 @@ header nav a{
 }
 
 header nav a:hover{ /* mudar a cor quando o cursor passar em cima */
-    color: #fff;
+    color: #f7c53b;
 }
 
 .box-cardapio{

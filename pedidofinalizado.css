@@ -53,3 +53,7 @@ header nav a:hover{ /* mudar a cor quando o cursor passar em cima */
 a{
     color: inherit;
 }
+
+.borda{
+    border: #f7c53b ridge;
+}

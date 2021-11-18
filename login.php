@@ -15,7 +15,7 @@ if (empty($email) || empty($senha)) {
 $email = mysqli_real_escape_string($conexao, $email);
 $senha = mysqli_real_escape_string($conexao, $senha);
 
-$query="SELECT id, nome FROM clientes WHERE email = '{$email}' and senha = md5('{$senha}');";
+$query="SELECT id, nome FROM usuarios WHERE email = '{$email}' and senha = md5('{$senha}');";
 
 $result = mysqli_query($conexao, $query);
 

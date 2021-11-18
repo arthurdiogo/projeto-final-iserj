@@ -14,7 +14,7 @@ if (empty($emailRecuperacao)) {
 
 $emailRecuperacao = mysqli_real_escape_string($conexao, $emailRecuperacao);
 
-$query="SELECT email FROM clientes WHERE email = '{$emailRecuperacao}'";
+$query="SELECT email FROM usuarios WHERE email = '{$emailRecuperacao}'";
 
 $result = mysqli_query($conexao, $query);
 
@@ -67,7 +67,7 @@ try
     $mail->send();
 
     //Atualizar senha no banco
-    $query= "UPDATE clientes SET senha= md5('{$senhaNova}') WHERE email= '{$emailRecuperacao}'";
+    $query= "UPDATE usuarios SET senha= md5('{$senhaNova}') WHERE email= '{$emailRecuperacao}'";
     $result = mysqli_query($conexao, $query);
 
 }
