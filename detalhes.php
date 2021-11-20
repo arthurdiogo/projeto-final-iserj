@@ -52,7 +52,7 @@ include('conexaolog.php');
                     <img src="<?php echo $data[4]; ?>" alt="" style='height: 300px;'>
                 </td>
                 <td>
-                    <br> <?php echo $data[1]; ?>
+                    <br> <h2> <?php echo $data[1]; ?> </h2>
                     <br> <?php echo $data[2]; ?>
                     <br> R$ <?php echo $data[3]; ?>
                     <form method="post" action="pedidos.php">
@@ -60,6 +60,12 @@ include('conexaolog.php');
                         <input name="produto_id" type="hidden" value="<?php echo $_GET['id'];?>">
                         <input name="valor" type="hidden" value="<?php echo $data[3];?>">
                         <input class="botaoAdicionar" type="submit" value="Adicionar ao Carrinho">
+                        <?php if (isset($_GET['op']) == 1) {
+                        echo "<div class='alert'> Você digitou uma quantidade acima da disponível no nosso estoque! </div>";
+                        echo "<div class='alert'> Por favor digite outra quantidade! </div>";
+                        exit();
+                    }
+                    ?>
                     </form>
                 </td>
             </tr>

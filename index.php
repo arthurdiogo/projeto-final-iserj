@@ -1,10 +1,10 @@
 <?php
 $message = "";
 if (isset($_GET['op']) and $_GET['op'] == 1) {
-    $message = '<h4>Email ou senha incorretos! Tente novamente!</h4>';
+    $message = "<div class='alert'><h4>Email ou senha incorretos! Tente novamente!</h4> </div>";
 }
 if (isset($_GET['op']) and $_GET['op'] == 4) {
-  $message = '<h4>Sua nova senha foi enviada para o seu email!</h4>';
+  $message = "<div class='alert'><h4>Sua nova senha foi enviada para o seu email!</h4></div>";
 }
 ?>
 

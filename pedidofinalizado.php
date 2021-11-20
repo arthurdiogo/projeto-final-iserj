@@ -45,9 +45,11 @@ include('conexaolog.php');
 
     <div class="borda">
         <h4>Seu pedido foi finalizado com sucesso!</h4>
-        <br> O número do seu pedido é <b><?php echo $_SESSION['pedido_id'] ?></b>. Entre em contato conosco pelo whatsapp e informe o número do seu pedido para efetuar o pagamento!
+        <br> O número do seu pedido é <b><?php echo $_GET['pedido_id']; ?>
+    </b>. Entre em contato conosco pelo whatsapp e informe o número do seu pedido para efetuar o pagamento!
     </div>
-    <br><button class="btn btn-success btn-block"><a href="https://wa.me/5521993442846" style="text-decoration:none; color:inherit">Efetuar pagamento</a></button>
+    <br><button class="btn btn-success btn-block"><a href="https://wa.me/5521993442846" 
+    style="text-decoration:none; color:inherit">Efetuar pagamento</a></button>
 
 
     <script src="https://kit.fontawesome.com/b6a87fb752.js" crossorigin="anonymous"></script> <!-- link para os icons --> 

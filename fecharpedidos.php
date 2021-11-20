@@ -82,7 +82,8 @@ include('conexaolog.php');
 
                                         ?>
                                     </td>
-                                    <td><button class="btn btn-danger btn-block"><a href="excluiritem.php?item_id=<?php echo $item[3]; ?>" style="color:inherit; text-decoration:none">Excluir</a></button></td>
+                                    <td><button class="btn btn-danger btn-block"><a href="excluiritem.php?item_id=<?php echo $item[3]; 
+                                    ?>" style="color:inherit; text-decoration:none">Excluir</a></button></td>
                                 </tr>    
                                 <?php
                                 }
@@ -91,10 +92,10 @@ include('conexaolog.php');
                         <td colspan="2"></td>
                         <td><b>Valor Total:</b></td>
                         <td><?php echo 'R$'. number_format($soma,2,',','.'); ?></td>
-                        <td><button class="btn btn-danger btn-block"><a href="excluiritem.php?op=1" style="text-decoration:none; color:inherit">Remover tudo</a></button></td>
                     </tr>
                 <table>
-                <button class="btn btn-success btn-block"><a href="finalizarpedido.php?op=1" style="text-decoration:none; color:inherit">Finalizar pedido</a></button>
+                <button class="btn btn-success btn-block"><a href="finalizarpedido.php?op=1"
+                style="text-decoration:none; color:inherit">Finalizar pedido</a></button>
                 </table>
         </div>
     </div>

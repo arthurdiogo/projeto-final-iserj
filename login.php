@@ -25,6 +25,7 @@ $data = mysqli_fetch_row($result);
 if ($row > 0) {
     $_SESSION['nome'] = $data[1];
     $_SESSION['cliente_id'] = $data[0];
+    $_SESSION['email'] = $email;
     header('Location: home.php');
 }else{
     header('Location: index.php?op=1');

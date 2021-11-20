@@ -2,11 +2,6 @@
 
 session_start();
 
-if (empty($_SESSION['nome'])) {
-    header('Location: index.php');
-}
-
-
 include('conexaolog.php');
 
 ?>
@@ -34,7 +29,7 @@ include('conexaolog.php');
         <div class="container">
             <h2 class="logo">CARDÁPIO</h2>
             <nav>
-                <a href="#">Olá, <?php echo $_SESSION['nome'] ?></a>
+                <a href="#">Olá, <?php if (empty($_SESSION['nome'])){ echo "";}else echo $_SESSION['nome']; ?></a>
                 <a href="logout.php">Sair</a>
                 <a href="fecharpedidos.php">
                 <i class="fas fa-shopping-cart">(<?php if (empty($_SESSION['quantidade'])){ echo 0; }else echo $_SESSION['quantidade']; ?>)</i>
@@ -109,11 +104,6 @@ include('conexaolog.php');
     </div>
     
     <footer class="partebaixo">
-        <div class="botoes">
-            <button role="button" class="botao">
-                <i class="fab fa-whatsapp"></i><!-- link do icon -->
-                <a class="botaovivo" href="https://wa.me/5521993442846" target="_blank">FAZER PEDIDO</a> 
-            </button>
             <button role="button" class="botao">
                 <i class="fas fa-info-circle"></i> <!-- link do icon -->
                 <a class="botaovivo" href="contato.html" target="_blank">RECLAMAÇÃO OU SUGESTÃO</a>

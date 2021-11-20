@@ -1,7 +1,7 @@
 <?php
 $message = "";
 if (isset($_GET['op']) and $_GET['op'] == 1) {
-    $message = '<h6>O email informado já está cadastrado. Por favor informe um outro ou faça o login!</h6>';
+    $message = "<div class='alert'><h4>O email informado já está cadastrado. Por favor informe um outro ou faça o login!</h4></div>";
 }
 ?>
 
