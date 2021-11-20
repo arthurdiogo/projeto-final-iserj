@@ -94,7 +94,7 @@ include('conexaolog.php');
                         <td><?php echo 'R$'. number_format($soma,2,',','.'); ?></td>
                     </tr>
                 <table>
-                <button class="btn btn-success btn-block"><a href="finalizarpedido.php?op=1"
+                <button class="btn btn-success btn-block"><a href="finalizarpedido.php?op=1&valorTotal=<?php echo $calculo; ?>"
                 style="text-decoration:none; color:inherit">Finalizar pedido</a></button>
                 </table>
         </div>
