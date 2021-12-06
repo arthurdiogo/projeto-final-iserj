@@ -3,7 +3,7 @@
 session_start();
 
 if (empty($_SESSION['nome'])) {
-    header('Location: index.php');
+    header('Location: login.php');
 }
 
 include('conexaolog.php');

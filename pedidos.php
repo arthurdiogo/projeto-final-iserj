@@ -3,7 +3,7 @@
 session_start();
 
 if (empty($_SESSION['nome'])) {
-    header('Location: index.php');
+    header('Location: login.php');
 }
 
 include('conexaolog.php');
@@ -32,7 +32,7 @@ $produto_id = mysqli_real_escape_string($conexao, $produto_id);
 $today = date("Y-m-d");
 
 if (empty($_SESSION['pedido_id'])) {
-    $query= "INSERT INTO pedidos (cliente_id, status, data) VALUES ($_SESSION[cliente_id], 'aberto', '{$today}');";
+    $query= "INSERT INTO pedidos (cliente_id, status, data) VALUES ($_SESSION[cliente_id], 'aberto', '{$today}')";
     
     $result = mysqli_query($conexao, $query);
     
@@ -53,4 +53,4 @@ $result = mysqli_query($conexao, $query);
 $row = mysqli_num_rows($result);
 
 $_SESSION['quantidade'] = $row;
-header('Location: home.php');
+header('Location: index.php');

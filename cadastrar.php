@@ -31,5 +31,7 @@ $result = mysqli_query($conexao, $query);
 
 
 $_SESSION['nome'] = $nome;
+$_SESSION['email'] = $email;
+$_SESSION['cliente_id']= mysqli_insert_id($conexao);
 
-header('Location: home.php');
+header('Location: index.php');

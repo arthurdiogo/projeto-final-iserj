@@ -1,32 +1,57 @@
 <?php
-
-session_start();
-
-include('conexaolog.php');
-
-$email = $_POST['email'];
-$senha = $_POST['senha'];
-
-if (empty($email) || empty($senha)) {
-    header('Location: index.php');
-    exit();
+$message = "";
+if (isset($_GET['op']) and $_GET['op'] == 1) {
+    $message = "<div class='alert'><h4>Email ou senha incorretos! Tente novamente!</h4> </div>";
 }
-
-$email = mysqli_real_escape_string($conexao, $email);
-$senha = mysqli_real_escape_string($conexao, $senha);
-
-$query="SELECT id, nome FROM usuarios WHERE email = '{$email}' and senha = md5('{$senha}');";
-
-$result = mysqli_query($conexao, $query);
-
-$row = mysqli_num_rows($result);
-$data = mysqli_fetch_row($result);
-
-if ($row > 0) {
-    $_SESSION['nome'] = $data[1];
-    $_SESSION['cliente_id'] = $data[0];
-    $_SESSION['email'] = $email;
-    header('Location: home.php');
-}else{
-    header('Location: index.php?op=1');
+if (isset($_GET['op']) and $_GET['op'] == 4) {
+  $message = "<div class='alert'><h4>Sua nova senha foi enviada para o seu email!</h4></div>";
 }
+?>
+
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" type="text/css" href="login.css" />
+</head>
+<body>
+  <div class="container" >
+    <a class="links" id="paracadastro"></a>
+    <a class="links" id="paralogin"></a>
+     
+    <div class="content">    
+      <!--FORMULÁRIO DE LOGIN-->
+      <div id="login">
+          <img class="logo" src="img/logoprojetolanches.png" alt="">          
+          <form method="post" action="logar.php"> 
+            <h1>Login</h1>
+            <?php echo "<br>".$message;?>
+            <p> 
+              <label for="email">Seu email</label>
+              <input id="email" name="email" type="text" placeholder="ex. meuemail@gmail.com" required/>
+            </p>
+            
+            <p> 
+              <label for="senha">Sua senha</label>
+              <input id="senha" name="senha" type="password" required/> 
+            </p>
+            
+            <p> 
+              <a href="esquecisenha.php">Esqueceu sua senha?</a>
+            </p>
+            
+            <p> 
+              <input type="submit" value="Logar" /> 
+            </p>
+            
+            <p class="link">
+              Ainda não tem conta?
+              <a href="cadastro.php">Cadastre-se</a>
+            </p>
+        </form>
+      </div>
+    </div>
+  </div>  
+</body>
+</html>

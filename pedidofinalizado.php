@@ -3,7 +3,7 @@
 session_start();
 
 if (empty($_SESSION['nome'])) {
-    header('Location: index.php');
+    header('Location: login.php');
 }
 
 include('conexaolog.php');
@@ -32,7 +32,7 @@ include('conexaolog.php');
         <div class="container">
             <h2 class="logo">PEDIDO</h2>
             <nav>
-                <a href="home.php">Olá, <?php echo $_SESSION['nome'] ?></a>
+                <a href="index.php">Olá, <?php echo $_SESSION['nome'] ?></a>
                 <a href="logout.php">Sair</a>
                 <a href="fecharpedidos.php">
                 <i class="fas fa-shopping-cart">(<?php if (empty($_SESSION['quantidade'])){ echo 0; }else echo $_SESSION['quantidade']; ?>)</i>
